@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link rel="shortcut icon" href="assets/img/favicon.ico" />
-	<title>TBrownA Home</title>
+	<title>TBrownA Home</title> 
 	<link href='http://fonts.googleapis.com/css?family=Raleway:400,300,500,600,700,800,900' rel='stylesheet'
 		type='text/css'>
 	<link rel='stylesheet' href='/assets/edd_templates/edd.css' type='text/css' media='all' />
