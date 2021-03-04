@@ -35,7 +35,7 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Home::index');
 $routes->get('/test', 'Home::test');
 $routes->get('/view_all', 'Home::view_all');
-$routes->get('/contact', 'Home::contact');
+$routes->get('/about', 'Home::aboutUs');
 $routes->get('/getPosts', 'Home::getPosts');
 $routes->get('/view_this/(:any)', 'Home::view_this/$1');
 $routes->get('/sendMessage', 'Home::sendMessage');

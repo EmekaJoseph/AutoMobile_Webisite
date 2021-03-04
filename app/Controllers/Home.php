@@ -21,7 +21,7 @@ class Home extends BaseController
 		echo view('General/foot');
 	}
 
-	public function contact()
+	public function aboutUs()
 	{
 		echo view('General/head');
 		echo view('contact');

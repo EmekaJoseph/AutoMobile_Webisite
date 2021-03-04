@@ -55,7 +55,7 @@
 					<ul id="menu-top" class="nav navbar-nav navbar-right">
 						<li class="<?= ($uri->getsegment(1) == ''? 'active' : null)?>"><a href="/">Home</a></li>
 						<li class="<?= ($uri->getsegment(1) == 'view_all'? 'active' : null)?>"><a href="/view_all">Our Products</a></li>
-						<li class="<?= ($uri->getsegment(1) == 'contact'? 'active' : null)?>"><a href="/contact">Contact Us</a></li>
+						<li class="<?= ($uri->getsegment(1) == 'about'? 'active' : null)?>"><a href="/about">About Us</a></li>
 						<!-- <li class="dropdown"><a href="#">Pages</a>
 							<ul class="dropdown-menu">
 								<li><a href="productsingle-nosidebar.html">Product Single No Sidebar</a></li>

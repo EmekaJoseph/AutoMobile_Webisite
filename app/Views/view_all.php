@@ -8,10 +8,7 @@
 						<div class="row">
 							<div class="col-md-12">
 								<div class="fleft">
-									<h1>Available</h1>
-								</div>
-								<div class="fright breadc">
-									<a href="index.html">Home</a> / view_all
+									<h1>View all</h1>
 								</div>
 							</div>
 						</div>
@@ -24,10 +21,10 @@
 				<div class="row padtop30 padbot20">
 					<div class="col-md-12">
 						<span class="pagesit fleft">
-							<!-- Showing page 1 of 2 -->
+							<h2></h2>
 						</span>
-						<div class="sortitemsarea fright">
-							<form method="GET" action="#" class="wowsortitems">
+						<!-- <div class="sortitemsarea fright">
+							<form method="GET" action="#" class="wowsortitems" >
 								<select name="data" id="data">
 									<option value="1">Sort by newest</option>
 									<option value="2">Sort by price: low to high</option>
@@ -38,10 +35,10 @@
 									<option value="7">Sort alphabetically</option>
 								</select>
 								<noscript>
-									<input type="submit" value="Submit">
+									<input type="submit" value="Submit" disabled>
 								</noscript>
 							</form>
-						</div>
+						</div> -->
 					</div>
 				</div>
 
@@ -53,9 +50,9 @@
 						</div>
 						<div class="clear">
 						</div>
-						<div class='pagination'>
+						<!-- <div class='pagination'>
 							<span class='current'>1</span><a href='#' class='inactive'>2</a>
-						</div>
+						</div> -->
 						<div class="clear">
 						</div>
 					</div>

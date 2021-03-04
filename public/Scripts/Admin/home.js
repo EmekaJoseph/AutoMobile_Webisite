@@ -96,7 +96,7 @@ $("#uploader").click(function () {
                 //$("#uploader").attr("disabled", false);
             },
             error: function (XMLHttpRequest, textStatus, errorThrown) {
-                alert('An error occoured');
+                alert(textStatus + ', ' + errorThrown);
                 $("#uploader").attr('disabled', false);
             }
         })
