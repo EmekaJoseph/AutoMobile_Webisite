@@ -76,7 +76,7 @@
 </body>
 <script>
 function loginAdmin(){
-    //var username = document.getElementById('username')
+    //////
 }
 </script>
 </html>
