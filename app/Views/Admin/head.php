@@ -71,7 +71,7 @@
                                 </li>
                                 <li>
                                     <a href="/admin/requests">
-                                        <h4 class="<?= ($uri->getsegment(2) == 'requests'? 'active' : null)?>"><i class="fa fa-envelope"></i>&nbsp; Requests</h4>
+                                        <h4 class="<?= ($uri->getsegment(2) == 'requests'? 'active' : null)?>"><i class="fa fa-envelope"></i>&nbsp; Messages</h4>
                                     </a>
                                 </li>
                                 <li>

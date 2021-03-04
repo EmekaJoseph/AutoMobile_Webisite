@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 use App\Models\PostsModel;
+use App\Models\MessageModel;
 use CodeIgniter\I18n\Time;
 
 
@@ -110,5 +111,27 @@ class Admin extends BaseController
 		$admin = new PostsModel();
 		$admin->where('id',$id)->delete($id);
 		echo json_encode(['status'=>'success']);
+	}
+
+
+
+	public function sendMessage()
+	{
+		$message = new MessageModel();
+
+		//today's date
+		$today = Time::parse('today', 'America/Chicago');
+		$date = $today->toLocalizedString('MMM d, yyyy');
+
+		$dataToSave = [
+			'senderName' => $this->request->getVar('senderName'),
+			'contact' => $this->request->getVar('contact'),
+			'message' => $this->request->getVar('message'),
+			'requestId' => $this->request->getVar('requestId'),
+			'date' => $date,
+			'readStatus' => 0
+		];
+		$message->save($dataToSave);
+		echo json_encode(['data' => 1]);
 	}
 }

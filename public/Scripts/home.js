@@ -1,5 +1,8 @@
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 
-function getPosts() {
+function getPosts() { //myString.substring(0,length)
     var boxes = "";
     $.ajax({
         url: "/getPosts",
@@ -9,6 +12,9 @@ function getPosts() {
             data = JSON.parse(data);
             items = data.data
             for (i = 0; i < 4; i++) {
+                var description = items[i].description;
+                var thisDescription = description.substring(0, 30) + '...';
+                var thisPrice = 'N ' + numberWithCommas(parseInt(items[i].price))
                 boxes += '<div class="wowitembox"> \
                 <div class="wowitemboxinner"> \
                     <div class="imagearea"> \
@@ -27,9 +33,9 @@ function getPosts() {
                     </div > \
                 <div class="notesarea"> \
                     <a href="productsingle-nosidebar.html"><h2>'+ items[i].title + '</h2></a> \
-                    <div class="description"><p>'+ items[i].description + '</p></div> \
+                    <div class="description"><p>'+ thisDescription + '</p></div> \
                     <div class="notesbottom"> \
-                        <div class="price fleft">'+ items[i].price + '</div> \
+                        <div class="price fleft"><b>'+ thisPrice + '</b></div> \
                         <div class="fright"> \
                             <a href="#"> \
                                 <button class="btn btn-sm" onclick = "viewThis('+ items[i].id + ')" >View Details</button> \
@@ -54,5 +60,7 @@ function viewThis(id) {
     event.preventDefault();
     window.location = "view_this/" + id;
 }
+
+
 
 

@@ -1,5 +1,5 @@
 <!-- MAIN CONTENT BEGINS -->
-<div class="col-md-8">
+<div class="col-md-9">
     <div id="primary" class="content-area">
         <div id="edd_checkout_form_wrap" class="edd_clearfix">
             <form id="edd_purchase_form" class="edd_form" action="#" method="POST">
@@ -25,24 +25,24 @@
                         <span class="edd-description">(optional)</span>
                         <input style="border: 3px solid #eee;" type="number" placeholder="" id="price" />
                     </p>
-                    <div style="display: flex;">
-                        <span>
+                    <div>
+                        <span class="col-md-3">
                             <label>
-                                <h4>Image 1: <span class="edd-required-indicator">*</span></h4>
+                                <h4>Image 1: (main)<span class="edd-required-indicator">*</span></h4>
                             </label>
                             <img src="" id="avatar_preview" width="150px" />
                             <input style="border: none;" type="file" id="avatar" />
                         </span>
-                        <span>
+                        <span class="col-md-3">
                             <label>
-                                <h4>Image 2:</h4>
+                                <h4>Image 2: (optional)</h4>
                             </label>
                             <img src="" id="avatar_preview_2" width="150px" />
                             <input style="border: none;" type="file" id="avatar_2" />
                         </span>
-                        <span>
+                        <span class="col-md-3">
                             <label>
-                                <h4>Image 3:</h4>
+                                <h4>Image 3: (optional)</h4>
                             </label>
                             <img src="" id="avatar_preview_3" width="150px" />
                             <input style="border: none;" type="file" id="avatar_3" />

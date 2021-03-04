@@ -95,6 +95,10 @@ $("#uploader").click(function () {
                 alert('uploaded successfully');
                 //$("#uploader").attr("disabled", false);
             },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert('An error occoured');
+                $("#uploader").attr('disabled', false);
+            }
         })
     }
 });

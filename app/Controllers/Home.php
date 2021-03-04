@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 use App\Models\PostsModel;
+use App\Models\MessageModel;
+use CodeIgniter\I18n\Time;
 
 class Home extends BaseController
 {
@@ -41,17 +43,27 @@ class Home extends BaseController
 	{
 		$posts = new PostsModel();
 		$thisPost = $posts->where('id', $id)->first();
-		$data['id'] = $thisPost['id'];
-		$data['title'] = $thisPost['title'];
-		$data['price'] = $thisPost['price'];
-		$data['description'] = $thisPost['description'];
-		$data['image'] = $thisPost['image'];
-		$data['image2'] = $thisPost['image2'];
-		$data['image3'] = $thisPost['image3'];
-		$data['date'] = $thisPost['date'];
+		$price = "";
+		if ($thisPost['price'] != null) {
+			$price = 'N'.number_format(intval($thisPost['price']));
+		}
+
+		$data = [
+			'id' => $thisPost['id'],
+			'title' => $thisPost['title'],
+			'price' => $price,
+			'description' => $thisPost['description'],
+			'image' => $thisPost['image'],
+			'image2' => $thisPost['image2'],
+			'image3' => $thisPost['image3'],
+			'date' => $thisPost['date']
+		];
+
 		echo view('General/head');
 		echo view('view_this', $data);
 		echo view('General/foot');
 		//echo json_encode(['data'=>$thisPost['id']]);
 	}
+
+
 }

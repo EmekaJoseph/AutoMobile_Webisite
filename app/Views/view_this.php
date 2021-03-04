@@ -15,39 +15,36 @@
                     <main id="main" class="site-main" role="main">
                         <article class="contentdownloadphp">
                             <div class="row">
-                                <div class="col-md-3">
+                                <div class="col-md-3"
+                                    style="padding: 20px 0px 20px 10px;font-size: 20px; background-color: #f5f0eb;">
                                     <span class="entryitemname"><b>Name: </b><?= $title ?><br /></span>
                                     <span class="entryprice"><b>Price:</b> <?= $price ?><br /></span>
+                                    <input type="text" value = "<?= $id ?>" id = "thisId" style="display:none;">
                                 </div>
                                 <div class="col-md-6">
                                     <img width="555" height="370" src="../assets/img/Uploads/<?= $image ?>"
                                         class="attachment-post-thumbnail wp-post-image" alt="5_1" />
-                                    <p><?= $description ?></p>
+                                    <p style="font-size: 18px;"><?= $description ?></p>
 
-                                    <div id="comments" class="comments-area">
+                                    <div class="comments-area">
                                         <div id="respond" class="comment-respond">
-                                            <h3 id="reply-title" class="comment-reply-title">Add your opinion <small><a
-                                                        rel="nofollow" id="cancel-comment-reply-link"
-                                                        href="/demo-kailo/downloads/sandy-banner/#respond"
-                                                        style="display:none;">Cancel Reply</a></small></h3>
-                                            <form action="#" method="post" id="commentform" class="comment-form">
-
+                                            <span style="font-size: 20px;"><b> Like what You see? Send a Message:
+                                                </b></span>
+                                            <form id = "messageForm" style="padding-top: 20px;">
                                                 <div class="row commentrow comment-form-comment">
-                                                    <div class="col-md-12">
-                                                        <label for="comment">Comment</label>
-                                                        <textarea id="comment" name="comment" rows="5"
-                                                            aria-required="true"></textarea>
+                                                    <div class="col-md-8">
+                                                        <input type="text" id="name" class="form-control form-group-lg"
+                                                            placeholder="Your name" />
+                                                        <input type="text" id="contact"
+                                                            class="form-control form-group-lg"
+                                                            placeholder="email or phone number" />
+                                                        <textarea name="" id="message" rows="10"
+                                                            placeholder="Type message here.."></textarea>
                                                     </div>
                                                 </div>
-                                                <p class="form-allowed-tags">
-                                                    You may use these <abbr
-                                                        title="HyperText Markup Language">HTML</abbr> tags and
-                                                    attributes:
-                                                    <code>&lt;a href=&quot;&quot; title=&quot;&quot;&gt; &lt;abbr title=&quot;&quot;&gt; &lt;acronym title=&quot;&quot;&gt; &lt;b&gt; &lt;blockquote cite=&quot;&quot;&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=&quot;&quot;&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=&quot;&quot;&gt; &lt;strike&gt; &lt;strong&gt; </code>
-                                                </p>
-                                                <p class="form-submit">
-                                                    <input name="submit" type="submit" id="submit" class="submit"
-                                                        value="Submit Comment" />
+                                                <p>
+                                                <button id="send" class= "btn btn-primary" 
+                                                style="padding: 10px" onclick="sendMessage();">Send Message</button>
                                                 </p>
                                             </form>
                                         </div>
@@ -70,3 +67,7 @@
         </div>
     </div>
 </div>
+<script type='text/javascript' src='../Scripts/view_this.js'></script>
+<script>
+    
+</script>

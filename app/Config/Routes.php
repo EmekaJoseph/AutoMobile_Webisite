@@ -38,6 +38,7 @@ $routes->get('/view_all', 'Home::view_all');
 $routes->get('/contact', 'Home::contact');
 $routes->get('/getPosts', 'Home::getPosts');
 $routes->get('/view_this/(:any)', 'Home::view_this/$1');
+$routes->get('/sendMessage', 'Home::sendMessage');
 $routes->get('/admin', 'Admin::index');
 $routes->get('/admin/home', 'Admin::home');
 $routes->get('/admin/posts', 'Admin::posts');
