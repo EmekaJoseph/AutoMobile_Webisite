@@ -113,8 +113,6 @@ class Admin extends BaseController
 		echo json_encode(['status'=>'success']);
 	}
 
-
-
 	public function sendMessage()
 	{
 		$message = new MessageModel();
@@ -133,5 +131,48 @@ class Admin extends BaseController
 		];
 		$message->save($dataToSave);
 		echo json_encode(['data' => 1]);
+	}
+
+	function getMessages()
+	{
+		$message = new MessageModel();
+		$data= $message->orderBy('id', 'DESC')->findAll();
+		echo json_encode(['data'=>$data]);
+	}
+
+
+	function deleteMessage($id)
+	{
+		$admin = new MessageModel();
+		$admin->where('id',$id)->delete($id);
+		echo json_encode(['status'=>'success']);
+	}
+
+	public function view_request($id)
+	{
+		$posts = new PostsModel();
+		$thisPost = $posts->where('id', $id)->first();
+		$price = "";
+		if ($thisPost['price'] != null) {
+			$price = 'N'.number_format(intval($thisPost['price']));
+		}
+
+		$data = [
+			'id' => $thisPost['id'],
+			'title' => $thisPost['title'],
+			'price' => $price,
+			'description' => $thisPost['description'],
+			'image' => $thisPost['image'],
+			'image2' => $thisPost['image2'],
+			'image3' => $thisPost['image3'],
+			'date' => $thisPost['date']
+		];
+		echo view('Admin/view_request', $data);
+	}
+
+	function changeReadStatus ($id)
+	{
+		$message = new MessageModel();
+		$message->where('id',$id)->set('readStatus', '1')->update();
 	}
 }

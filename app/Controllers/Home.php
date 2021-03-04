@@ -62,8 +62,5 @@ class Home extends BaseController
 		echo view('General/head');
 		echo view('view_this', $data);
 		echo view('General/foot');
-		//echo json_encode(['data'=>$thisPost['id']]);
 	}
-
-
 }
