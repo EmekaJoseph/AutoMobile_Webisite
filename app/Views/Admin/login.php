@@ -74,9 +74,58 @@
     </div>
     </div>
 </body>
-<script>
-function loginAdmin(){
-    //////
+<script> 
+function showPass() {
+    var x = document.getElementById("password");
+    if (x.type === "password") {
+        x.type = "text";
+    } else {
+        x.type = "password";
+    }
 }
+
+
+function loginAdmin() {
+    event.preventDefault();
+    var username = $('#username').val();
+    var password = $('#password').val();
+    $("#adminIn").prop('disabled', true);
+
+    if (username == "" || password == "") {
+        alert("Complete all fields");
+        $("#adminIn").prop('disabled', false);
+
+    }
+    else {
+        // $("#err").html('Enter Valid Details:');
+        $.ajax({
+            url: "/admin/login",
+            method: "GET",
+            data: {
+                adminUsername: username,
+                adminPassword: password
+            },
+            success: function (data) {
+                data = JSON.parse(data);
+                if (data.exists == "false") {
+                    alert("Invalid Details");
+                    $("#adminIn").prop('disabled', false);
+                }
+                else if (data.exists == "true") {
+                    //admin = data.data[0];
+                    localStorage.setItem('tbrownByProffix', 'isLoggedIn');
+                    window.location = "/admin/home";
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert(textStatus + ', ' + errorThrown);
+                $("#adminIn").prop('disabled', false);
+            }
+        })
+
+    }
+}
+
+
 </script>
 </html>

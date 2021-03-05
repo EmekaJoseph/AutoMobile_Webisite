@@ -76,8 +76,8 @@ $("#uploader").click(function () {
     var image2 = document.getElementById('avatar_preview_2').getAttribute('src');
     var image3 = document.getElementById('avatar_preview_3').getAttribute('src');
     thisPost.image = image.split(';base64,')[1];
-    thisPost.image2 = image2.split(';base64,')[1];
-    thisPost.image3 = image3.split(';base64,')[1];
+    thisPost.image2 = image2 == "" ? thisPost.image : image2.split(';base64,')[1];
+    thisPost.image3 = image3 == "" ? thisPost.image : image3.split(';base64,')[1];
 
 
     if (thisPost.title == "" || thisPost.description == "" || thisPost.image == "") {

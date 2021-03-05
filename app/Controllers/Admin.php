@@ -3,11 +3,30 @@
 namespace App\Controllers;
 use App\Models\PostsModel;
 use App\Models\MessageModel;
+use App\Models\AdminModel;
 use CodeIgniter\I18n\Time;
 
 
 class Admin extends BaseController
 {
+
+
+	function login(){
+		$admin = new AdminModel();
+		$username = $this->request->getVar('adminUsername');
+		$password = $this->request->getVar('adminPassword');
+
+		//$admin_exists = $admin->where('username', $username)->countAllResults();
+		$admin_exists = $admin->where('username', $username)->
+		where('password', $password)->first();
+	
+		if($admin_exists){
+			echo json_encode(['exists'=>'true']);	
+		}
+		else {
+			echo json_encode(['exists'=>'false']);	
+		}
+	}
 
     public function index()
 	{

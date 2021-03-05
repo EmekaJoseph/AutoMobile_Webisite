@@ -24,6 +24,11 @@
     <!-- <script type='text/javascript' src='/assets/js/SmoothScroll.js'></script> -->
     <script type='text/javascript' src='/assets/js/init.js'></script>
     <script type='text/javascript' src='/assets/js/anim.js'></script>
+    <script>
+    if (localStorage.getItem('tbrownByProffix') === null) {
+        window.location = '/admin';
+    }
+    </script>
 
 </head>
 
@@ -85,7 +90,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="/admin">
+                                    <a href="#" onclick = "logout();">
                                         <h4><i class="fa fa-power-off"></i>&nbsp; Log Out</h4>
                                     </a>
                                 </li>
@@ -123,4 +128,9 @@
                         })
                     }
                     getMessages();
+
+                    function logout() {
+                        localStorage.removeItem('tbrownByProffix');
+                        window.location = "/admin";
+                    }
                 </script>
