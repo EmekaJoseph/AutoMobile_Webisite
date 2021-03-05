@@ -9,21 +9,24 @@ class Home extends BaseController
 {
 	public function index()
 	{
-		echo view('General/head');
+		$data['title'] = 'TBrown | Home';
+		echo view('General/head', $data);
 		echo view('home');
 		echo view('General/foot');
 	}
 
 	public function view_all()
 	{
-		echo view('General/head');
+		$data['title'] = 'TBrown | All';
+		echo view('General/head',$data);
 		echo view('view_all');
 		echo view('General/foot');
 	}
 
 	public function aboutUs()
 	{
-		echo view('General/head');
+		$data['title'] = 'TBrown | About';
+		echo view('General/head',$data);
 		echo view('contact');
 		echo view('General/foot');
 	}
@@ -48,7 +51,7 @@ class Home extends BaseController
 			$price = 'N'.number_format(intval($thisPost['price']));
 		}
 
-		$data = [
+		$details = [
 			'id' => $thisPost['id'],
 			'title' => $thisPost['title'],
 			'price' => $price,
@@ -59,8 +62,9 @@ class Home extends BaseController
 			'date' => $thisPost['date']
 		];
 
-		echo view('General/head');
-		echo view('view_this', $data);
+		$data['title'] = 'TBrown | All';
+		echo view('General/head',$data);
+		echo view('view_this', $details);
 		echo view('General/foot');
 	}
 }

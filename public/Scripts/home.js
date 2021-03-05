@@ -14,7 +14,7 @@ function getPosts() { //myString.substring(0,length)
             for (i = 0; i < 4; i++) {
                 var description = items[i].description;
                 var thisDescription = description.substring(0, 30) + '...';
-                var thisPrice = 'N ' + numberWithCommas(parseInt(items[i].price))
+                var thisPrice = items[i].price == "" ? "" : 'N ' + numberWithCommas(parseInt(items[i].price))
                 boxes += '<div class="wowitembox"> \
                 <div class="wowitemboxinner"> \
                     <div class="imagearea"> \
