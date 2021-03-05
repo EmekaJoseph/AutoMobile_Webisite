@@ -40,7 +40,7 @@
 					<!-- .wowitemboxlist-->
 
 					<div class="row text-center ">
-						<a href="/view_all"><button class="btn btn-primary" style="width: 200px;">View
+						<a href="/hn356e7tdhj9kk"><button class="btn btn-primary" style="width: 200px;">View
 								all</button></a>
 						<hr>
 					</div>
