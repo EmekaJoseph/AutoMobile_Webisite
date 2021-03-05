@@ -61,22 +61,27 @@
                             <ul>
                                 <li>
                                     <a href="/admin/home">
-                                        <h4 class="<?= ($uri->getsegment(2) == 'home'? 'active' : null)?>"><i class="fa fa-plus-square"></i>&nbsp; New Uploads</h4>
+                                        <h4 class="<?= ($uri->getsegment(2) == 'home'? 'active' : null)?>"><i
+                                                class="fa fa-plus-square"></i>&nbsp; New Uploads</h4>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="/admin/posts">
-                                        <h4 class="<?= ($uri->getsegment(2) == 'posts'? 'active' : null)?>"><i class="fa fa-th-list"></i>&nbsp; View Uploads</h4>
+                                        <h4 class="<?= ($uri->getsegment(2) == 'posts'? 'active' : null)?>"><i
+                                                class="fa fa-th-list"></i>&nbsp; View Uploads</h4>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="/admin/requests">
-                                        <h4 class="<?= ($uri->getsegment(2) == 'requests'? 'active' : null)?>"><i class="fa fa-envelope"></i>&nbsp; Messages</h4>
+                                        <h4 class="<?= ($uri->getsegment(2) == 'requests'? 'active' : null)?>"><i
+                                                class="fa fa-envelope"></i>&nbsp; Messages
+                                            <span class="badge" id="NoOfMessages" style="display:none">new</span></h4>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="/admin/password">
-                                        <h4 class="<?= ($uri->getsegment(2) == 'password'? 'active' : null)?>"><i class="fa fa-share"></i>&nbsp; Change Password</h4>
+                                        <h4 class="<?= ($uri->getsegment(2) == 'password'? 'active' : null)?>"><i
+                                                class="fa fa-share"></i>&nbsp; Change Password</h4>
                                     </a>
                                 </li>
                                 <li>
@@ -84,8 +89,10 @@
                                         <h4><i class="fa fa-power-off"></i>&nbsp; Log Out</h4>
                                     </a>
                                 </li>
-                                
-                                <li><hr></li>
+
+                                <li>
+                                    <hr>
+                                </li>
                                 <li>
                                     <a href="/">
                                         <h4><i class="fa fa-eye"></i>&nbsp; View Main Site</h4>
@@ -95,3 +102,25 @@
                         </aside>
                     </div>
                 </div>
+                <script>
+                    function getMessages() {
+                        $.ajax({
+                            url: "/admin/getMessages",
+                            type: "GET",
+                            contentType: "application/json",
+                            success: function (data) {
+                                data = JSON.parse(data);
+                                var notifyValue = 0;
+                                $.each(data.data, function (count, row) {
+                                    if (row.readStatus == 0) {
+                                        notifyValue += 1;
+                                    }
+                                });
+                                if (notifyValue > 0) $("#NoOfMessages").show();
+                                else $("#NoOfMessages").hide();
+
+                            },
+                        })
+                    }
+                    getMessages();
+                </script>

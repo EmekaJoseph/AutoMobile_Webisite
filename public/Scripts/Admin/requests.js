@@ -12,7 +12,7 @@ function getMessages() {
             }
             else {
                 $.each(data.data, function (count, row) { //337AB7
-                    readStatus = row.readStatus == 0 ? 'font-weight: bold;' : ""
+                    readStatus = row.readStatus == 0 ? 'font-weight: bold;' : "";
                     tableData += "<tr style = '" + readStatus + "'>\
                     <td >"+ (count + 1) + "</td>\
                     <td>"+ row.senderName + "</td>\

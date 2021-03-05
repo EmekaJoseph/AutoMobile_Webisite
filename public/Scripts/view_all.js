@@ -10,10 +10,10 @@ function getPosts() { //myString.substring(0,length)
         async: false,
         success: function (data) {
             data = JSON.parse(data);
-            items = data.data
-            for (i = 0; i < items.length; i++) {
-                var description = items[i].description;
-                var thisDescription = description.substring(0, 30) + '...';
+            items = data.data;
+            var lengthToDisplay = items.length < 12 ? items.length : 12;
+            for (i = 0; i < lengthToDisplay; i++) {
+                // var thisDescription = description.substring(0, 30) + '...';
                 var thisPrice = 'N ' + numberWithCommas(parseInt(items[i].price))
                 boxes += '<div class="wowitembox"> \
                 <div class="wowitemboxinner"> \
@@ -33,7 +33,7 @@ function getPosts() { //myString.substring(0,length)
                     </div > \
                 <div class="notesarea"> \
                     <a href="productsingle-nosidebar.html"><h2>'+ items[i].title + '</h2></a> \
-                    <div class="description"><p>'+ thisDescription + '</p></div> \
+                    <div class="description"><p>'+ items[i].description + '</p></div> \
                     <div class="notesbottom"> \
                         <div class="price fleft"><b>'+ thisPrice + '</b></div> \
                         <div class="fright"> \

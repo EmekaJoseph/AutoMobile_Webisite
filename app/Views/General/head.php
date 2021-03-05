@@ -54,7 +54,7 @@
 				<div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse">
 					<ul id="menu-top" class="nav navbar-nav navbar-right">
 						<li class="<?= ($uri->getsegment(1) == ''? 'active' : null)?>"><a href="/">Home</a></li>
-						<li class="<?= ($uri->getsegment(1) == 'view_all'? 'active' : null)?>"><a href="/view_all">Our Products</a></li>
+						<li class="<?= ($uri->getsegment(1) == 'hn356e7tdhj9kk'? 'active' : null)?>"><a href="/hn356e7tdhj9kk">Our Products</a></li>
 						<li class="<?= ($uri->getsegment(1) == 'about'? 'active' : null)?>"><a href="/about">About Us</a></li>
 						<!-- <li class="dropdown"><a href="#">Pages</a>
 							<ul class="dropdown-menu">
