@@ -10,7 +10,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12">
-							<h1 data-scrollreveal="enter top over 1.9s after 0.2s">TBROWN A. AUTOS </h1>
+							<h1 data-scrollreveal="enter top over 1.9s after 0.2s">TBROWN AUTOS </h1>
 							<p class="lead" data-scrollreveal="enter bottom over 1.9s after 0.4s">
 								We sell Vehicles at affordable prices
 							</p>

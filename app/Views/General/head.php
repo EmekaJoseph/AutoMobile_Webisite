@@ -6,8 +6,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link rel="shortcut icon" href="../assets/img/favicon.ico" />
 	<title><?= $title ?></title>
-	<link href='http://fonts.googleapis.com/css?family=Raleway:400,300,500,600,700,800,900' rel='stylesheet'
-		type='text/css'>
+	<!-- <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,500,600,700,800,900' rel='stylesheet'
+		type='text/css'> -->
 	<link rel='stylesheet' href='/assets/edd_templates/edd.css' type='text/css' media='all' />
 	<link rel='stylesheet' href='/assets/css/bootstrap.min.css' type='text/css' media='all' />
 	<link rel='stylesheet' href='/assets/css/custom.css' type='text/css' media='all' />

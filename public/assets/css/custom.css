@@ -6,8 +6,18 @@ Author URI:http://www.wowthemes.net/
 Description: Create beautiful design stores in just minutes. Suitable for selling any kind of digital items, such as e-books, tutorials, audio or video files, plugins, code snippets, themes, art, logos etc.
 Version:1.0
 */
+@font-face {
+	font-family: Ubuntu-Regular;
+	src: url('fonts/ubuntu/Ubuntu-Regular.ttf'); 
+  }
+  
+ @font-face {
+	font-family: Ubuntu-Bold;
+	src: url('fonts/ubuntu/Ubuntu-Bold.ttf'); 
+  }
 
 body,html {
+	font-family: Ubuntu-Regular, sans-serif;
 	text-rendering:optimizeLegibility !important;
 	-webkit-font-smoothing:antialiased !important;
 }
@@ -16,7 +26,7 @@ body {
 	line-height:1.7;
 	font-size:13px;
 	color:#777;
-	font-family:Raleway;
+	/* font-family:Raleway; */
 }
 body.admin-bar .navbar-fixed-top {
 	top:32px;
