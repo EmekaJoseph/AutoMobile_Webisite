@@ -9,18 +9,17 @@ use CodeIgniter\I18n\Time;
 
 class Admin extends BaseController
 {
-
-
 	function login(){
 		$admin = new AdminModel();
 		$username = $this->request->getVar('adminUsername');
 		$password = $this->request->getVar('adminPassword');
-
-		//$admin_exists = $admin->where('username', $username)->countAllResults();
+		
 		$admin_exists = $admin->where('username', $username)->
 		where('password', $password)->first();
 	
 		if($admin_exists){
+			$session = session();
+			$session->set('tbrownByProffix', $admin_exists['username']);
 			echo json_encode(['exists'=>'true']);	
 		}
 		else {
@@ -28,43 +27,72 @@ class Admin extends BaseController
 		}
 	}
 
+	public function logout()
+	{
+		$session = session();
+		$session->destroy();
+		echo view('Admin/login');
+	}
+
     public function index()
 	{
-		//echo view('Admin/head');
-		echo view('Admin/login');
-		// echo view('Admin/foot');
+		$session = session();
+		if ($session->has('tbrownByProffix')){
+			echo view('Admin/head');
+			echo view('Admin/home');
+		}
+		else{
+			echo view('Admin/login');
+		}	
     }
-
 
 	public function home()
 	{
-		echo view('Admin/head');
-		echo view('Admin/home');
-		// echo view('Admin/foot');
+		$session = session();
+		if ($session->has('tbrownByProffix')){
+			echo view('Admin/head');
+			echo view('Admin/home');
+		}
+		else{
+			echo view('Admin/login');
+		}		
     }
     
     public function posts()
 	{
-		echo view('Admin/head');
-		echo view('Admin/posts');
-		// echo view('Admin/foot');
+		$session = session();
+		if ($session->has('tbrownByProffix')){
+			echo view('Admin/head');
+			echo view('Admin/posts');
+		}
+		else{
+			echo view('Admin/login');
+		}		
     }
     
     public function requests()
 	{
-		echo view('Admin/head');
-		echo view('Admin/requests');
-		// echo view('Admin/foot');
+		$session = session();
+		if ($session->has('tbrownByProffix')){
+			echo view('Admin/head');
+			echo view('Admin/requests');
+		}
+		else{
+			echo view('Admin/login');
+		}		
     }
     
     public function password()
 	{
-		echo view('Admin/head');
-		echo view('Admin/password');
-		// echo view('Admin/foot');
+		$session = session();
+		if ($session->has('tbrownByProffix')){
+			echo view('Admin/head');
+			echo view('Admin/password');
+		}
+		else{
+			echo view('Admin/login');
+		}		
 	}
-
-
 
 	public function upload()
 	{
@@ -77,9 +105,7 @@ class Admin extends BaseController
 		$img = $this->request->getVar('image');
 		$img2 = $this->request->getVar('image2');
 		$img3 = $this->request->getVar('image3');
-		// $rand = uniqid();
-		// $rand_2 = uniqid();
-		// $rand_3 = uniqid();
+		
 		$image = uniqid() . '.jpg';
 		$image2 = uniqid() . '.jpg';
 		$image3 = uniqid() . '.jpg';
@@ -114,7 +140,6 @@ class Admin extends BaseController
 		];
 
 		$admin->save($dataToSave);
-
 		echo json_encode(['status'=>'success']);
 	}
 
@@ -135,7 +160,6 @@ class Admin extends BaseController
 	public function sendMessage()
 	{
 		$message = new MessageModel();
-
 		//today's date
 		$today = Time::parse('today', 'America/Chicago');
 		$date = $today->toLocalizedString('MMM d, yyyy');

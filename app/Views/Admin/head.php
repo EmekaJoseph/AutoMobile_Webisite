@@ -24,12 +24,6 @@
     <!-- <script type='text/javascript' src='/assets/js/SmoothScroll.js'></script> -->
     <script type='text/javascript' src='/assets/js/init.js'></script>
     <script type='text/javascript' src='/assets/js/anim.js'></script>
-    <script>
-    if (localStorage.getItem('tbrownByProffix') === null) {
-        window.location = '/admin';
-    }
-    </script>
-
 </head>
 
 <body>
@@ -39,12 +33,16 @@
 
         <!-- HEADER
 		================================================== -->
+
+        <!-- session variable -->
+        <!-- <php $session= session();?> <php echo $session->get('tbrownByProffix'); ?> -->
+
         <nav id="wow-menu" class="navbar navbar-default navbar-fixed-top">
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
+                <div class="navbar-header"> 
                     <a class="navbar-brand" href='/admin'>
-                        TBrown A. Autos Admin
+                        TBrown A. Autos Admin 
                     </a>
                 </div>
             </div>
@@ -90,7 +88,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" onclick = "logout();">
+                                    <a href="/admin/logout" onclick = "logout();">
                                         <h4><i class="fa fa-power-off"></i>&nbsp; Log Out</h4>
                                     </a>
                                 </li>
@@ -128,9 +126,4 @@
                         })
                     }
                     getMessages();
-
-                    function logout() {
-                        localStorage.removeItem('tbrownByProffix');
-                        window.location = "/admin";
-                    }
                 </script>

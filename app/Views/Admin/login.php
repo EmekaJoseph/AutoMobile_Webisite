@@ -19,11 +19,11 @@
     <!-- scripts -->
     <script type='text/javascript' src='/assets/js/jquery.js'></script>
     <script type='text/javascript' src='/assets/js/bootstrap.min.js'></script>
-    <script type='text/javascript' src='/assets/js/masonry.js'></script>
+    <!-- <script type='text/javascript' src='/assets/js/masonry.js'></script>
     <script type='text/javascript' src='/assets/js/imagesloaded.js'></script>
     <script type='text/javascript' src='/assets/js/SmoothScroll.js'></script>
     <script type='text/javascript' src='/assets/js/init.js'></script>
-    <script type='text/javascript' src='/assets/js/anim.js'></script>
+    <script type='text/javascript' src='/assets/js/anim.js'></script> -->
 
 </head>
 
@@ -84,7 +84,6 @@ function showPass() {
     }
 }
 
-
 function loginAdmin() {
     event.preventDefault();
     var username = $('#username').val();
@@ -97,7 +96,6 @@ function loginAdmin() {
 
     }
     else {
-        // $("#err").html('Enter Valid Details:');
         $.ajax({
             url: "/admin/login",
             method: "GET",
@@ -112,8 +110,6 @@ function loginAdmin() {
                     $("#adminIn").prop('disabled', false);
                 }
                 else if (data.exists == "true") {
-                    //admin = data.data[0];
-                    localStorage.setItem('tbrownByProffix', 'isLoggedIn');
                     window.location = "/admin/home";
                 }
             },
