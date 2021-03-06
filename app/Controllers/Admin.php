@@ -19,11 +19,31 @@ class Admin extends BaseController
 	
 		if($admin_exists){
 			$session = session();
-			$session->set('tbrownByProffix', $admin_exists['username']);
+			$session->set('tbrownByProffix', $admin_exists['id']);
 			echo json_encode(['exists'=>'true']);	
 		}
 		else {
 			echo json_encode(['exists'=>'false']);	
+		}
+	}
+
+	function changePassword(){
+		$admin = new AdminModel();
+		$oldPassword = $this->request->getVar('oldPassword');
+		$newPassword = $this->request->getVar('newPassword');
+
+		//get Id from session
+		$session = session();
+		$thisId = $session->get('tbrownByProffix');
+
+		//verify if passwords match and save
+		$thisAdmin = $admin->where('id', $thisId )->first();
+		if($oldPassword == $thisAdmin['password']){
+			$admin->set('password', $newPassword)->where('id', $thisId)->update();
+			echo json_encode(['data'=>1]);
+		}
+		else{
+			echo json_encode(['data'=>0]);
 		}
 	}
 
