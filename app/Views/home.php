@@ -61,7 +61,7 @@
 					</div>
 					<div class="col-md-6">
 						<div class="featurebox">
-							<h2><i class="fa fa-trophy"></i> Registered under CAC </h2>
+							<h2><i class="fa fa-check"></i> Registered under CAC </h2>
 							We are registered under the Business governing body of Nigeria, (Coperate Affairs Commision)
 						</div>
 					</div>

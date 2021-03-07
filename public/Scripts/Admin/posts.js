@@ -16,7 +16,7 @@ function getPosts() {
                 <td>"+ row.description + "</td>\
                 <td>"+ price + "</td>\
                 <td>"+ row.date + "</td>\
-                <td><button type='button' onclick = 'deletePost("+ row.id + ")' class='btn btn-danger btn-link' style = 'color: red;'>Delete</button></td>\
+                <td><button type='button' onclick = 'deletePost("+ row.id + ")' class='btn btn-danger btn-link' style = 'color: red;'><i class = 'fa fa-trash'></i></button></td>\
                 </tr>";
             });
             $("#uploads").html(tableData);

@@ -48,8 +48,8 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href='/'>
-						<img alt="TbrownA" src="../assets/img/logo1.jpg" />
+					<a class="navbar-bran" href='/'>
+						<img alt="TbrownA" src="../assets/img/logo1.jpg" style="width: 120px" />
 					</a>
 				</div>
 				<!-- Menu -->
