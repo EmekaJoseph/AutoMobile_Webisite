@@ -57,7 +57,7 @@
         <div class="container padtop50 padbot40">
             <div class="row">
 
-                <div class="col-md-3">
+                <div class="col-md-3" style = "background-color: #F5F0EB;">
                     <div id="secondary" class="widget-area" role="complementary">
                         <aside id="recent-posts-3" class="widget widget_recent_entries">
                             <h1 class="widget-title section-title"><span>Menu</span></h1>
