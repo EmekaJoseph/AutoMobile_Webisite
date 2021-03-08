@@ -41,7 +41,7 @@
 
 					<div class="row text-center ">
 						<a href="/hn356e7tdhj9kk"><button class="btn btn-primary" style="width: 200px;">View
-								all</button></a>
+								more...</button></a>
 						<hr>
 					</div>
 					<div class="divider1">
