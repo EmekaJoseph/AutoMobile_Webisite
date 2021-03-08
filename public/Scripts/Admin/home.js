@@ -80,7 +80,7 @@ $("#uploader").click(function () {
     thisPost.image3 = image3 == "" ? thisPost.image : image3.split(';base64,')[1];
 
 
-    if (thisPost.title == "" || thisPost.description == "" || thisPost.image == "") {
+    if (thisPost.title == "" || thisPost.description == "" || image == "") {
         alert("Important fields must not be empty");
         $("#uploader").attr("disabled", false);
     }
