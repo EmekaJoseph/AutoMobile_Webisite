@@ -67,6 +67,7 @@ function getUploadImageUrl_3(input) {
 
 $("#uploader").click(function () {
     event.preventDefault();
+    $("#uploader").html("please wait...");
     $(this).attr("disabled", true);
     var thisPost = {};
     thisPost.title = $("#title").val();
@@ -83,6 +84,7 @@ $("#uploader").click(function () {
     if (thisPost.title == "" || thisPost.description == "" || image == "") {
         alert("Important fields must not be empty");
         $("#uploader").attr("disabled", false);
+        $("#uploader").html("SUBMIT");
     }
     else {
         $.ajax({
@@ -98,6 +100,7 @@ $("#uploader").click(function () {
             error: function (XMLHttpRequest, textStatus, errorThrown) {
                 alert(textStatus + ', ' + errorThrown);
                 $("#uploader").attr('disabled', false);
+                $("#uploader").html("Submit");
             }
         })
     }
