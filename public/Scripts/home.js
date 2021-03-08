@@ -10,8 +10,9 @@ function getPosts() { //myString.substring(0,length)
         async: false,
         success: function (data) {
             data = JSON.parse(data);
-            items = data.data
-            for (i = 0; i < 4; i++) {
+            items = data.data;
+            var len = items.length < 4 ? items.length : 4;
+            for (i = 0; i < len; i++) {
                 var description = items[i].description;
                 var thisDescription = description.substring(0, 30) + '...';
                 var thisPrice = items[i].price == "" ? "" : 'N ' + numberWithCommas(parseInt(items[i].price))
