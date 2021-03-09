@@ -60,5 +60,6 @@
 </div>
 </body>
 <script type='text/javascript' src='/Scripts/Admin/home.js'></script>
+<script type='text/javascript' src='/Scripts/Admin/compressor.js'></script>
 
 </html>

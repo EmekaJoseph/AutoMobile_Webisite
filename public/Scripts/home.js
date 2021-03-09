@@ -18,15 +18,14 @@ function getPosts() { //myString.substring(0,length)
                 var thisPrice = items[i].price == "" ? "" : 'N ' + numberWithCommas(parseInt(items[i].price))
                 boxes += '<div class="wowitembox"> \
                 <div class="wowitemboxinner"> \
-                    <div class="imagearea"> \
-                        <img width="555" height="370" \
-                            src="/assets/img/Uploads/'+ items[i].image + '" \
-                            class="attachment-post-thumbnail wp-post-image" alt="163_1" /> \
-                        <div class="caption"> \
+                    <div class="imagearea" style = "width:300px; height: 170px; overflow: hidden;" > \
+                        <img src = "/assets/img/Uploads/'+ items[i].image + '" \
+                class="attachment-post-thumbnail wp-post-image" alt = "163_1" /> \
+                <div class="caption"> \
                             <div class="blur"></div> \
                             <div class="caption-text"> \
                                 <div class="captionbuttons"> \
-                <a href = "#" class="captiondetails" onclick = "viewThis('+ items[i].id + ')"> <i \
+                <a href="#" class="captiondetails" onclick="viewThis('+ items[i].id + ')"> <i \
                     class="fa fa-link"></i> VIEW DETAILS</a > \
                                 </div > \
                             </div > \
@@ -39,7 +38,7 @@ function getPosts() { //myString.substring(0,length)
                         <div class="price fleft"><b>'+ thisPrice + '</b></div> \
                         <div class="fright"> \
                             <a href="#"> \
-                                <button class="btn btn-sm" onclick = "viewThis('+ items[i].id + ')" >View Details</button> \
+                                <button class="btn btn-sm" onclick="viewThis('+ items[i].id + ')" >View Details</button> \
                             </a> \
                         </div> \
                         <div class="clearfix"> \</div> \
