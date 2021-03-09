@@ -17,9 +17,8 @@ function getPosts() { //myString.substring(0,length)
                 var thisPrice = 'N ' + numberWithCommas(parseInt(items[i].price))
                 boxes += '<div class="wowitembox"> \
                 <div class="wowitemboxinner"> \
-                    <div class="imagearea"> \
-                        <img width="555" height="370" \
-                            src="/assets/img/Uploads/'+ items[i].image + '" \
+                    <div class="imagearea" style = "width:300px; height: 170px; overflow: hidden;"> \
+                        <img src="/assets/img/Uploads/'+ items[i].image + '" \
                             class="attachment-post-thumbnail wp-post-image" alt="163_1" /> \
                         <div class="caption"> \
                             <div class="blur"></div> \
