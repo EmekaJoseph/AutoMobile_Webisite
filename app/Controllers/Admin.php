@@ -118,7 +118,7 @@ class Admin extends BaseController
 	{
 		$admin = new PostsModel();
 		$title = $this->request->getVar('title');
-		$description = $this->request->getVar('description');
+		$description = $this->request->getVar('Description');
 		$price = $this->request->getVar('price');
 		
 		//get, convert and store the images
