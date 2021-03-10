@@ -160,7 +160,7 @@ $("#uploader").click(function () {
     $(this).attr("disabled", true);
     var thisPost = {};
     thisPost.title = $("#title").val();
-    thisPost.description = $("#description").val();
+    thisPost.Description = $("#description").val();
     thisPost.price = $("#price").val();
     var image = document.getElementById('avatar_preview').getAttribute('src');
     var image2 = document.getElementById('avatar_preview_2').getAttribute('src');
@@ -170,7 +170,7 @@ $("#uploader").click(function () {
     thisPost.image3 = image3 == "" ? thisPost.image : image3.split(';base64,')[1];
 
 
-    if (thisPost.title == "" || thisPost.description == "" || image == "") {
+    if (thisPost.title == "" || thisPost.Description == "" || image == "") {
         alert("Important fields must not be empty");
         $("#uploader").attr("disabled", false);
         $("#uploader").html("SUBMIT");
