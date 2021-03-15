@@ -42,5 +42,21 @@ function sendImage() {
     var imgbase = document.getElementById('avatar_preview').getAttribute('src');
     console.log(imgbase);
 }
+
+
+
+//blob test
+$.ajax({
+  url: '//images-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&url=https://i.imgur.com/6pHlLrf.png',
+  dataType: 'blob',
+  processData: false
+}).done(function(result) {
+  $('#result').html('<a href="' + window.URL.createObjectURL(result) + '" target="_blank">Blob link</a>');
+  console.log(window.URL.createObjectURL(result))
+}).fail(function(err) {
+  console.error(err);
+});
+
+
 </script>
 </html>
