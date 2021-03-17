@@ -56,12 +56,11 @@
     </div>
 
     <div class="pt-2">
-        <form action="/admin/upload_" method="post" enctype="multipart/form-data">
-            <input type="date" name="" id="testText">
-            <input type="file" name="file" class="form-control" id="file" onchange="readURL(this);"
-                accept=".png, .jpg, .jpeg" />
-            <button type="submit" class="btn btn-success" onclick="checker();">send</button>
-        </form>
+        <!-- <form action = "/admin/upload_" id = "myForm" method="post" enctype="multipart/form-data" onsubmit="return checker()">
+            <input type="text" name="" id="testText">
+            <input type="file" name="file"  id="file" accept=".png, .jpg, .jpeg" />
+            <button type="submit" class="btn btn-success">send</button>
+        </form> -->
     </div>
 </div>
 </div>
@@ -70,9 +69,8 @@
 </body>
 <script type='text/javascript' src='/Scripts/Admin/home.js'></script>
 <script type='text/javascript' src='/Scripts/Admin/compressor.js'></script>
-<script>
+<!-- <script>
     function checker() {
-        e.preventDefault();
         var text = $("#testText").val();
         if (text == "") {
             alert('empty');
@@ -81,6 +79,6 @@
     }
 
 
-</script>
+</script> -->
 
 </html>
