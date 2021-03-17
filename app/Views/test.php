@@ -13,7 +13,15 @@
 <button onclick="sendImage();">console</button>
 </body>
 
+
+<script type='text/javascript' src='/assets/js/chance.js'></script>
 <script>
+
+//using chance js
+console.log(chance.guid());
+
+
+
     var input = document.getElementById('avatar');
 if(input) {
   input.addEventListener('change', function () {
@@ -21,7 +29,6 @@ if(input) {
     //sendImage();
   });
 }
-
 
 
 function getUploadImageUrl(input) {
@@ -46,16 +53,17 @@ function sendImage() {
 
 
 //blob test
-$.ajax({
-  url: '//images-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&url=https://i.imgur.com/6pHlLrf.png',
-  dataType: 'blob',
-  processData: false
-}).done(function(result) {
-  $('#result').html('<a href="' + window.URL.createObjectURL(result) + '" target="_blank">Blob link</a>');
-  console.log(window.URL.createObjectURL(result))
-}).fail(function(err) {
-  console.error(err);
-});
+
+// $.ajax({
+//   url: '//images-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&url=https://i.imgur.com/6pHlLrf.png',
+//   dataType: 'blob',
+//   processData: false
+// }).done(function(result) {
+//   $('#result').html('<a href="' + window.URL.createObjectURL(result) + '" target="_blank">Blob link</a>');
+//   console.log(window.URL.createObjectURL(result))
+// }).fail(function(err) {
+//   console.error(err);
+// });
 
 
 </script>
