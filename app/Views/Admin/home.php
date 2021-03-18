@@ -56,9 +56,14 @@
     </div>
 
     <!-- <div class="pt-2">
+        <php if(session()->get('error')) : ?>
+            <div class="alert alert-danger" role="alert">
+            <= session()->getFlashdata('error');?>
+            </div>
+        <php endif; ?>
         <form action="/admin/upload_" id="myForm" method="post" enctype="multipart/form-data"
             onsubmit="return checker()">
-            <input type="text" name="" id="testText">
+            <input type="text" name="text" id="testText">
             <input type="file" name="file" id="file" accept=".png, .jpg, .jpeg" />
             <button type="submit" class="btn btn-success">send</button>
         </form>
@@ -78,8 +83,6 @@
             return false;
         }
     }
-
-
 </script> -->
 
 </html>

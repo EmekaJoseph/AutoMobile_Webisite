@@ -241,11 +241,30 @@ class Admin extends BaseController
 
 	// function upload_()
 	// {
-	// 	$file = $this->request->getFile('file');
-	// 	if ($file->isValid() && ! $file->hasMoved())
-	// 	{
-	// 		$newName = $file->getRandomName();
-	// 		$file->move('../public/assets/img/', $newName);
+	// 	// $file = $this->request->getFile('file');
+	// 	// if ($file->isValid() && ! $file->hasMoved())
+	// 	// {
+	// 	// 	$newName = $file->getRandomName();
+	// 	// 	$file->move('../public/assets/img/', $newName);
+	// 	// }
+		
+
+	// 	$admin = new AdminModel();
+	// 	$text = $this->request->getVar('text');
+	// 	$admin_exists = $admin->where('username', $text)->first();
+	// 	if ($admin_exists){
+ 			
 	// 	}
+	// 	else{
+	// 		$session = session();
+	// 		$session->setFlashdata('error', 'not found in database');
+
+	// 		echo view('Admin/head');
+	// 		echo view('Admin/home');
+	// 	}
+		
+		
+		
+
 	// }
 }
