@@ -55,13 +55,14 @@
         </div>
     </div>
 
-    <div class="pt-2">
-        <!-- <form action = "/admin/upload_" id = "myForm" method="post" enctype="multipart/form-data" onsubmit="return checker()">
+    <!-- <div class="pt-2">
+        <form action="/admin/upload_" id="myForm" method="post" enctype="multipart/form-data"
+            onsubmit="return checker()">
             <input type="text" name="" id="testText">
-            <input type="file" name="file"  id="file" accept=".png, .jpg, .jpeg" />
+            <input type="file" name="file" id="file" accept=".png, .jpg, .jpeg" />
             <button type="submit" class="btn btn-success">send</button>
-        </form> -->
-    </div>
+        </form>
+    </div> -->
 </div>
 </div>
 </div>

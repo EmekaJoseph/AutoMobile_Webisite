@@ -239,13 +239,13 @@ class Admin extends BaseController
 		$message->where('id',$id)->set('readStatus', '1')->update();
 	}
 
-	function upload_()
-	{
-		$file = $this->request->getFile('file');
-		if ($file->isValid() && ! $file->hasMoved())
-		{
-			$newName = $file->getRandomName();
-			$file->move('../public/assets/img/', $newName);
-		}
-	}
+	// function upload_()
+	// {
+	// 	$file = $this->request->getFile('file');
+	// 	if ($file->isValid() && ! $file->hasMoved())
+	// 	{
+	// 		$newName = $file->getRandomName();
+	// 		$file->move('../public/assets/img/', $newName);
+	// 	}
+	// }
 }
