@@ -253,14 +253,14 @@ class Admin extends BaseController
 	// 	$text = $this->request->getVar('text');
 	// 	$admin_exists = $admin->where('username', $text)->first();
 	// 	if ($admin_exists){
- 			
+	// 		echo json_encode(['data'=>1]);
 	// 	}
 	// 	else{
-	// 		$session = session();
-	// 		$session->setFlashdata('error', 'not found in database');
+	// 		echo json_encode(['data'=>0]);
+	// 		// $session = session();
+	// 		// $session->setFlashdata('error', 'not found in database');
 
-	// 		echo view('Admin/head');
-	// 		echo view('Admin/home');
+			
 	// 	}
 		
 		

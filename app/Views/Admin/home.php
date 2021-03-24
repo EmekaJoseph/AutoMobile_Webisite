@@ -56,16 +56,16 @@
     </div>
 
     <!-- <div class="pt-2">
-        <php if(session()->get('error')) : ?>
-            <div class="alert alert-danger" role="alert">
-            <= session()->getFlashdata('error');?>
-            </div>
-        <php endif; ?>
-        <form action="/admin/upload_" id="myForm" method="post" enctype="multipart/form-data"
-            onsubmit="return checker()">
+        <?php if(session()->get('error')) : ?>
+        <div class="alert alert-danger" role="alert">
+            <?= session()->getFlashdata('error');?>
+        </div>
+        <?php endif; ?>
+        <form action="/admin/upload_" id="myForm" method="post" enctype="multipart/form-data">
             <input type="text" name="text" id="testText">
+            <small style="color:red" id="small"></small>
             <input type="file" name="file" id="file" accept=".png, .jpg, .jpeg" />
-            <button type="submit" class="btn btn-success">send</button>
+            <button type="submit" class="btn btn-success" id="btnSend" disabled>send</button>
         </form>
     </div> -->
 </div>
@@ -77,12 +77,28 @@
 <script type='text/javascript' src='/Scripts/Admin/compressor.js'></script>
 <!-- <script>
     function checker() {
-        var text = $("#testText").val();
-        if (text == "") {
-            alert('empty');
-            return false;
-        }
+        $('#testText').on('blur', function () {
+            var text = $("#testText").val();
+            $("#small").html('validating....Please wait ');
+            $.ajax({
+                url: "/admin/upload_",
+                method: "POST",
+                data: { 'text': text },
+                success: function (data) {
+                    data = JSON.parse(data);
+                    if (data.data == 1) {
+                        $("#small").html('');
+                        $("#btnSend").prop('disabled', false);
+                    }
+                    else {
+                        $("#small").html('not correct');
+                        $("#btnSend").prop('disabled', true);
+                    }
+                }
+            })
+        })
     }
+    checker();
 </script> -->
 
 </html>
