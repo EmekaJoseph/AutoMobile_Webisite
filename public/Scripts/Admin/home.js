@@ -41,6 +41,12 @@ function checker() {
 }
 
 
+// $("#uploader").click(function () {
+//     if (checker()) {
+//         $("#uploader").html("Uploading...");
+//     }
+// });
+
 // var width = 500;
 // var input1 = document.getElementById('avatar');
 // input1.onchange = function () {
