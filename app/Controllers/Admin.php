@@ -262,9 +262,59 @@ class Admin extends BaseController
 
 			
 	// 	}
-		
-		
-		
 
 	// }
+
+
+	function upload__(){
+		$admin = new PostsModel();
+		$title = $this->request->getVar('title');
+		$description = $this->request->getVar('description');
+		$price = $this->request->getVar('price');
+		$file1 = $this->request->getFile('file1');
+		$file2 = $this->request->getFile('file2');
+		$file3 = $this->request->getFile('file3');
+
+		$savePath = '../public/assets/img/Uploads/';
+
+		if ($file1->isValid() && !$file1->hasMoved() )
+		{
+			$image1 = $file1->getRandomName();
+			$file1->move($savePath, $image1);
+		}
+
+		if ($file2->isValid() && !$file2->hasMoved() )
+		{
+			$image2 = $file2->getRandomName();
+			$file2->move($savePath, $image2);
+		}
+
+		if ($file3->isValid() && !$file3->hasMoved() )
+		{
+			$image3 = $file3->getRandomName();
+			$file3->move($savePath, $image3);
+		}
+		
+		//today's date
+		$today = Time::parse('today', 'America/Chicago');
+		$date = $today->toLocalizedString('MMM d, yyyy');
+
+		//store in database
+		$dataToSave = [
+			'title' => $title,
+			'description' => $description,
+			'price' => $price,
+			'image' => $image1,
+			'image2' => $image2,
+			'image3' => $image3,
+			'date' => $date	
+		];
+
+		$admin->save($dataToSave);
+		$session = session();
+		$session->setFlashdata('success', 'uploaded Successfully');
+
+		echo view('Admin/head');
+		echo view('Admin/home');
+	}
 }

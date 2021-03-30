@@ -1,29 +1,37 @@
 <!-- MAIN CONTENT BEGINS -->
+
 <div class="col-md-9">
+<?php if(session()->get('success')) : ?>
+<div class="alert alert-success" role="alert">
+    <?= session()->getFlashdata('success');?>
+</div>
+<?php endif; ?>
     <div id="primary" class="content-area">
         <div id="edd_checkout_form_wrap" class="edd_clearfix">
-            <form id="edd_purchase_form" class="edd_form" action="#" method="POST">
+            <form action="/admin/upload__" id="myForm" method="post" enctype="multipart/form-data"
+                onsubmit="return checker();">
                 <fieldset id="edd_checkout_user_info">
                     <p>
                         <label>
                             <h4>Title: <span class="edd-required-indicator">*</span></h4>
                         </label>
                         <span class="edd-description">The name of the item you want to upload</span>
-                        <input style="border: 3px solid #eee;" type="text" placeholder="" id="title" />
+                        <input style="border: 3px solid #eee;" type="text" name="title" id="title" />
                     </p>
                     <p>
                         <label>
                             <h4>Description: <span class="edd-required-indicator">*</span></h4>
                         </label>
                         <span class="edd-description">Describe this Item</span>
-                        <textarea style="border: 3px solid #eee;" id="description" rows="3" cols="10"></textarea>
+                        <textarea style="border: 3px solid #eee;" id="description" name="description" rows="3"
+                            cols="10"></textarea>
                     </p>
                     <p>
                         <label>
                             <h4>Price:</h4>
                         </label>
                         <span class="edd-description">(optional)</span>
-                        <input style="border: 3px solid #eee;" type="number" placeholder="" id="price" />
+                        <input style="border: 3px solid #eee;" type="number" name="price" placeholder="" id="price" />
                     </p>
                     <div>
                         <span class="col-md-3">
@@ -31,21 +39,24 @@
                                 <h4>Image 1: (main)<span class="edd-required-indicator">*</span></h4>
                             </label>
                             <img src="" id="avatar_preview" width="150px" />
-                            <input style="border: none;" type="file" id="avatar" />
+                            <input style="border: none;" type="file" id="avatar" name="file1" id="file"
+                                accept=".png, .jpg, .jpeg" />
                         </span>
                         <span class="col-md-3">
                             <label>
                                 <h4>Image 2: (optional)</h4>
                             </label>
                             <img src="" id="avatar_preview_2" width="150px" />
-                            <input style="border: none;" type="file" id="avatar_2" />
+                            <input style="border: none;" type="file" id="avatar_2" name="file2" id="file"
+                                accept=".png, .jpg, .jpeg" />
                         </span>
                         <span class="col-md-3">
                             <label>
                                 <h4>Image 3: (optional)</h4>
                             </label>
                             <img src="" id="avatar_preview_3" width="150px" />
-                            <input style="border: none;" type="file" id="avatar_3" />
+                            <input style="border: none;" type="file" id="avatar_3" name="file3" id="file"
+                                accept=".png, .jpg, .jpeg" />
                         </span>
                     </div>
                 </fieldset>
@@ -54,20 +65,6 @@
             </form>
         </div>
     </div>
-
-    <!-- <div class="pt-2">
-        <?php if(session()->get('error')) : ?>
-        <div class="alert alert-danger" role="alert">
-            <?= session()->getFlashdata('error');?>
-        </div>
-        <?php endif; ?>
-        <form action="/admin/upload_" id="myForm" method="post" enctype="multipart/form-data">
-            <input type="text" name="text" id="testText">
-            <small style="color:red" id="small"></small>
-            <input type="file" name="file" id="file" accept=".png, .jpg, .jpeg" />
-            <button type="submit" class="btn btn-success" id="btnSend" disabled>send</button>
-        </form>
-    </div> -->
 </div>
 </div>
 </div>
@@ -76,7 +73,7 @@
 <script type='text/javascript' src='/Scripts/Admin/home.js'></script>
 <script type='text/javascript' src='/Scripts/Admin/compressor.js'></script>
 <!-- <script>
-    function checker() {
+    function checkrr() {
         $('#testText').on('blur', function () {
             var text = $("#testText").val();
             $("#small").html('validating....Please wait ');
@@ -100,5 +97,6 @@
     }
     checker();
 </script> -->
+
 
 </html>

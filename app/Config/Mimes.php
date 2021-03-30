@@ -200,10 +200,12 @@ class Mimes
 		'jpg'   => [
 			'image/jpeg',
 			'image/pjpeg',
+			'image/JPG',
 		],
 		'jpeg'  => [
 			'image/jpeg',
 			'image/pjpeg',
+			'image/JPEG',
 		],
 		'jpe'   => [
 			'image/jpeg',

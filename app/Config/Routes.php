@@ -44,10 +44,10 @@ $routes->get('/admin/home', 'Admin::home');
 $routes->get('/admin/posts', 'Admin::posts');
 $routes->get('/admin/requests', 'Admin::requests');
 $routes->get('/admin/password', 'Admin::password');
+$routes->get('/admin/upload__', 'Admin::upload__');
 $routes->get('/admin/upload', 'Admin::upload');
 $routes->get('/admin/changeReadStatus/(:any)', 'Admin::changeReadStatus/$1');
 $routes->get('/admin/view_request/(:any)', 'Admin::view_request/$1');
-
 /*
  * --------------------------------------------------------------------
  * Additional Routing
