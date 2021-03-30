@@ -274,6 +274,9 @@ class Admin extends BaseController
 		$file1 = $this->request->getFile('file1');
 		$file2 = $this->request->getFile('file2');
 		$file3 = $this->request->getFile('file3');
+		$image1 = "";
+		$image2 = "";
+		$image3 = "";
 
 		$savePath = '../public/assets/img/Uploads/';
 

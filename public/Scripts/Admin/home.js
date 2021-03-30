@@ -29,6 +29,7 @@ function diplayImage(input, destination) {
 
 
 function checker() {
+    event.preventDefault();
     var thisPost = {};
     thisPost.title = $("#title").val();
     thisPost.Description = $("#description").val();
@@ -37,6 +38,11 @@ function checker() {
     if (thisPost.title == "" || thisPost.Description == "" || image == "") {
         alert("Important fields must not be empty");
         return false;
+    }
+    else {
+        $("#uploader").attr("disabled", true);
+        $("#uploader").html("Uploading..");
+        $("#myForm").submit();
     }
 }
 

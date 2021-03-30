@@ -1,15 +1,14 @@
 <!-- MAIN CONTENT BEGINS -->
 
 <div class="col-md-9">
-<?php if(session()->get('success')) : ?>
-<div class="alert alert-success" role="alert">
-    <?= session()->getFlashdata('success');?>
-</div>
-<?php endif; ?>
+    <?php if(session()->get('success')) : ?>
+    <div class="alert alert-success" role="alert">
+        <?= session()->getFlashdata('success');?>
+    </div>
+    <?php endif; ?>
     <div id="primary" class="content-area">
         <div id="edd_checkout_form_wrap" class="edd_clearfix">
-            <form action="/admin/upload__" id="myForm" method="post" enctype="multipart/form-data"
-                onsubmit="return checker();">
+            <form action="/admin/upload__" id="myForm" method="post" enctype="multipart/form-data">
                 <fieldset id="edd_checkout_user_info">
                     <p>
                         <label>
@@ -60,7 +59,7 @@
                         </span>
                     </div>
                 </fieldset>
-                <button class="btn btn-primary" id="uploader" style="width: 150px;">SUBMIT</button>
+                <button onclick="checker();" class="btn btn-primary" id="uploader" style="width: 150px;">SUBMIT</button>
                 </fieldset>
             </form>
         </div>
